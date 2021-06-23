@@ -37,9 +37,9 @@ $("#show7").hover(function () {
 $("#show8").hover(function () {
   $("#img8").toggle();
 });
-// function getData(){
-//   var name = document.getElementById("name").value;
-// alert(name +" we have received your message.Thank you for reaching out to us.");
-// }
+function getData(){
+  var name = document.getElementById("name").value;
+alert(name +" we have received your message.Thank you for reaching out to us.");
+}
 
 

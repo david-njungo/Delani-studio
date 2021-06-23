@@ -18,7 +18,7 @@ body{
   padding-bottom: 50px;
   padding-top: 50px;
 }
-/*.services{
+.services{
   text-align: center;
   background-image:url(../backgrounds/s_image.jpg) ;
   padding-top: 150px;
@@ -31,7 +31,7 @@ body{
   padding-bottom:50px;
   font-size: smaller;
 }
-.portfolio{
+/*.portfolio{
   text-align: center;
 }
 .contact{

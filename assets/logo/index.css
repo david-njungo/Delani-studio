@@ -9,7 +9,7 @@ body{
   text-align:center;
   padding-top: 350px;
   }
-/*.row-h1{
+.row-h1{
   font-size: larger;
 }
 .aboutus{
@@ -18,7 +18,7 @@ body{
   padding-bottom: 50px;
   padding-top: 50px;
 }
-.services{
+/*.services{
   text-align: center;
   background-image:url(../backgrounds/s_image.jpg) ;
   padding-top: 150px;

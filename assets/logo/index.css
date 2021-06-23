@@ -31,7 +31,7 @@ body{
   padding-bottom:50px;
   font-size: smaller;
 }
-/*.portfolio{
+.portfolio{
   text-align: center;
 }
 .contact{
@@ -41,7 +41,7 @@ body{
   width:1920px;
   color:white;
 }
-footer{
+/*footer{
   text-align: center;
   padding-top:100px;
   font-size: small;

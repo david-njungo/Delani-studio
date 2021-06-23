@@ -41,12 +41,12 @@ body{
   width:1920px;
   color:white;
 }
-/*footer{
+footer{
   text-align: center;
   padding-top:100px;
   font-size: small;
 }
-#design,#devhide,#producthide{
+/*#design,#devhide,#producthide{
   display: none;
 }
 #mouse{

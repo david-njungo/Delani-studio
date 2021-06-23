@@ -59,7 +59,7 @@ footer{
 #delani{
   font-size: 60px;
 }
-/*.img{
+.img{
   background-color: white;
   display:none;
   position: relative;
@@ -71,7 +71,7 @@ footer{
   background-image: none;
   opacity: unset;
 }
-#message{
+/*#message{
   height:300px;
   width:80%;
 }

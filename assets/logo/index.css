@@ -46,7 +46,7 @@ footer{
   padding-top:100px;
   font-size: small;
 }
-/*#design,#devhide,#producthide{
+#design,#devhide,#producthide{
   display: none;
 }
 #mouse{
@@ -59,7 +59,7 @@ footer{
 #delani{
   font-size: 60px;
 }
-.img{
+/*.img{
   background-color: white;
   display:none;
   position: relative;

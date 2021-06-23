@@ -2,7 +2,7 @@ body{
     width:1920px;
   }
   .home{
-    background-image: url(backgrounds/h_img.jpg);
+    background-image: url("h_img.jpg");
     width:1920px;
     height:1071px;
     color: whitesmoke;
@@ -20,7 +20,7 @@ body{
   }
   .services{
     text-align: center;
-    background-image:url(../backgrounds/s_image.jpg) ;
+    background-image:url("s_image.jpg") ;
     padding-top: 150px;
     color:white;
     height:488px;
@@ -35,7 +35,7 @@ body{
     text-align: center;
   }
   .contact{
-    background-image: url(../backgrounds/c_image.jpg);
+    background-image: url("c_image.jpg");
     background-position: cover;
     height:683px;
     width:1920px;

@@ -85,3 +85,6 @@ footer{
 #h2{
   text-align: center;
 }
+input{
+  background: transparent;
+ }

@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="container-fluid search-results">
+    <strong>Showing results for: </strong><i>'{{ form.q.value }}'</i>
+    {% include 'core/recipes/recipe_list.html' %}
+</div>
+{% endblock %}

@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from rest_framework import generics,status,views,permissions
-from .serializers import RegisterSerializer,EmailVerificationSerializer,LoginSerializer,LogoutSerializer
+from recipeapp.serializers.authserializers import RegisterSerializer,EmailVerificationSerializer,LoginSerializer,LogoutSerializer
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import User 
-from .utils import Util
+from recipeapp.models.authmodels import User 
+from recipeapp.utils import Util
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
 import jwt

@@ -17,37 +17,39 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.views import LogoutView,LoginView
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from django.contrib.auth import views 
+# from recipeapp.views import RegisterView,VerifyEmail,LoginAPIView
 
-from recipeapp.views import categories, main, recipes, accounts, users
-
+# from recipeapp.views import categories, main, recipes, accounts, users
+schema_view = get_schema_view(
+   openapi.Info(
+      title="RECIPEAPP API",
+      default_version='v1',
+      description="Test description",
+      terms_of_service="https://www.aurapp.com/policies/terms/",
+      contact=openapi.Contact(email="contact@recipe.local"),
+      license=openapi.License(name="Test License"),
+   ),
+   public=True,
+   permission_classes=[permissions.AllowAny],
+)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/',admin.site.urls),
+    path('',include('recipeapp.urls')),
+    path('accounts/',include('registration.backends.simple.urls')),
+    # path('accounts/', include('registration.backends.hmac.urls')),
+    # path('register/',RegisterView.as_view(),name='register'),
+    # path('login/',LoginAPIView.as_view(),name='login'),
+    # path('verifyemail/',VerifyEmail.as_view(),name='verifyemail'),
+    path('logout/', LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL), name='logout'),
+    path('schema/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
-    path('', main.index, name='index'),
-    path('featured/', main.index, name='featured'),
-    path('popular/', main.popular, name='popular'),
-    path('trending/', main.trending, name='trending'),
-    path('new/', main.new, name='new'),
-    path('search/', main.search, name='search'),
-    path('ingredient-search', main.ingredient_search, name='ingredient_search'),
-    path('ingredient-search/results', main.ingredient_search_results, name='ingredient_search_results'),
 
-    path('accounts/signup/', accounts.signup, name='signup'),
-    path('accounts/preferences/', accounts.preferences, name='preferences'),
-    path('accounts/', include('django.contrib.auth.urls')),
-
-    path('users/<username>/', users.user_profile, name='user_profile'),
-    path('users/<username>/recipes/', users.user_recipes, name='user_recipes'),
-
-    path('categories/', categories.categories, name='categories'),
-    path('categories/<name>/', categories.category_detail, name='category_detail'),
-
-    path('submit/', recipes.submit_recipe, name='submit_recipe'),
-    path('recipes/<int:recipe_id>/', recipes.recipe_detail, name='recipe_detail'),
-    path('recipes/<int:recipe_id>/review', recipes.submit_review, name='submit_review'),
-    path('recipes/<int:recipe_id>/edit', recipes.edit_recipe, name='edit_recipe'),
-
-    path('api/', include('api.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.utils import timezone
 
-from recipeapp.forms.users import SignUpForm, SaveUserProfileForm
-from recipeapp.models import UserProfile
+# from recipeapp.forms.users import SignUpForm, SaveUserProfileForm
+# from recipeapp.models import UserProfile
 
 
 def signup(request):

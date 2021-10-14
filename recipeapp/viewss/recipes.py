@@ -3,8 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.http import HttpResponseForbidden
 
-from recipeapp.forms.recipes import ReviewRecipeForm, SubmitRecipeForm
-from recipeapp.models import Recipe
+# from recipeapp.forms.recipes import ReviewRecipeForm, SubmitRecipeForm
+# from recipeapp.models import Recipe
 
 
 def recipe_detail(request, recipe_id):

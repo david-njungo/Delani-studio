@@ -1,27 +1,62 @@
-{% extends 'core/base.html' %}
-
-{% block title %}Login{% endblock %}
+{% extends 'base_auth.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load rest_framework %}
 
 {% block content %}
-<div class="container">
-    <h1>Login</h1>
+<style>
+  .home{
+    height: 620px;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-image: url('https://thumbs.dreamstime.com/b/bakery-recipe-text-background-rustic-wooden-table-top-view-baking-cake-rural-kitchen-dough-ingredients-culinary-82287996.jpg');
+  }
+  .card{
+    background-color: rgb(204, 196, 196);
+    border-radius: 20px;
+    font-size: 30px;
+  }
+  .title{
+    color:rgb(235, 155, 70);
+    font-size: 40px;
+    background-color: white;
+  }
+  .btn{
+    background-color:rgb(235, 155, 70);
+    font-size: 20px;
+  }
+  .acc{
+    font-size: 15px;
+  }
+  .link{
+    font-size: 20px;
+  }
+</style>
 
-    {% if form.errors %}
-        <div class="alert alert-danger">Your username and password didn't match. Please try again.</div>
-    {% endif %}
-
-    <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
-        </div>
-        <input type="hidden" name="next" value="{% url 'index' %}">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div class="row home">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <div class="card mt-5">
+      <div class="card-body">
+          {% if form.errors %}
+          <p> Password or Username is incorrect </p>
+        {% endif %}
+        
+          <div class="card-title py-2">
+            <h1 class="title text-center rounded-pill">Classy Recipes</h1>
+          </div>
+            </form>
+            <form  action="/accounts/login/" method="post">
+              {% csrf_token %}
+              {% bootstrap_form form%}
+        
+          <input type="submit" value="Login" class="btn btn-block rounded-pill fw-bold  py-4 submit-btn" />
+        </form>
+        <h6 class="ps-5 fw-bold acc">Don’t have an account? <a class="link text-warning fw-bold ps-2" href="{% url 'registration_register' %}">Register now</a></h6>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
 </div>
-{% endblock %}
+
+{% endblock content %}

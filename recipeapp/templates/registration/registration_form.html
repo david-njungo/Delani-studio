@@ -1,0 +1,38 @@
+{% extends 'base_auth.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% load rest_framework %}
+
+{% block content %}
+<style>
+  .card-body{
+    border-radius: 25px;
+    background-color: rgb(212, 204, 204);
+  }
+</style>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="card rounded-3 mt-5">
+      <div class="card-body">
+        <div class="card-title py-1">
+          <h1 class="title bg-light text-center rounded-pill width=auto">Classy Recipes</h1>
+          <h4>Register here:</h4>
+        </div>
+        <form  action="/accounts/register/" method="post">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+
+          <input type="hidden" name="next" value="{{next}}">
+       
+          <input type="submit" value="Register" class="btn rounded-pill btn-block btn-warning submit-btn" />
+        </form>
+        <h6 class="ps-5">Already registered?<a class="link text-warning fw-bold ps-2"href="{% url 'auth_login' %}">Login now</a></h6>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+{% endblock content %}
